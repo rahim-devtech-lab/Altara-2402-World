@@ -3,144 +3,142 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Altara 2402 World Map | WolfTech Simulation</title>
+  <title>Altara 2402 — Planet Terra Nova</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body, html {
-      height: 100%;
-      font-family: 'Poppins', sans-serif;
-      color: white;
-      scroll-behavior: smooth;
-      background-color: #0f1724;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: #0b0f17;
+      color: #fff;
+      overflow-x: hidden;
     }
 
     /* Hero Section */
     .hero {
       position: relative;
-      height: 60vh;
       width: 100%;
+      height: 100vh;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       text-align: center;
       overflow: hidden;
-      background: url('hero-fallback.png') center center / cover no-repeat;
-    }
-
-    /* Particle animation container */
-    #particles-js {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      z-index: 0;
-      pointer-events: none;
     }
 
     .hero video {
       position: absolute;
-      top: 50%;
-      left: 50%;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transform: translate(-50%, -50%);
-      z-index: -1;
-      filter: brightness(0.6);
+      z-index: 1;
+      background: #000;
+    }
+
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
     }
 
     .hero-content {
-      z-index: 2;
-      padding: 20px 30px;
+      position: relative;
+      z-index: 3;
       max-width: 900px;
-      background: rgba(0,0,0,0.4);
+      padding: 20px;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      background: rgba(0, 0, 0, 0.45);
       border-radius: 12px;
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
     }
 
     .hero-content h1 {
-      font-size: 2.8rem;
-      color: #a6e1ff;
-      margin-bottom: 15px;
+      font-size: 2.5em;
+      margin-bottom: 1rem;
+      color: #4fc3f7;
     }
 
     .hero-content p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #c0c0c0;
+      font-size: 1.1em;
+      color: #dcdcdc;
+      line-height: 1.5;
     }
 
-    /* Main Content */
-    main {
-      padding: 50px 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    main h2 {
-      color: #06b6d4;
-      margin-bottom: 20px;
+    /* World Overview Section */
+    section.world-overview {
+      padding: 60px 20px;
+      background: #0f1724;
       text-align: center;
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 30px;
+    section.world-overview h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #4fc3f7;
     }
 
-    table, th, td {
-      border: 1px solid #06b6d4;
+    section.world-overview p {
+      font-size: 1.1em;
+      max-width: 800px;
+      margin: 0 auto 40px auto;
+      color: #dcdcdc;
+    }
+
+    table {
+      width: 90%;
+      margin: 0 auto;
+      border-collapse: collapse;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      overflow: hidden;
     }
 
     th, td {
-      padding: 12px;
-      text-align: left;
+      padding: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     th {
-      background-color: #0b1220;
-      color: #00b4ff;
+      background: rgba(255, 255, 255, 0.1);
+      color: #4fc3f7;
     }
 
-    td {
-      color: #c0c0c0;
-    }
-
-    /* Responsive */
-    @media(max-width: 768px) {
-      .hero-content h1 {
-        font-size: 2rem;
-      }
-      .hero-content p {
-        font-size: 1rem;
-      }
-      table, th, td {
-        font-size: 0.9rem;
-      }
+    tr:last-child td {
+      border-bottom: none;
     }
   </style>
 </head>
+
 <body>
 
   <!-- Hero Section -->
   <section class="hero">
     <div id="particles-js"></div>
-    <video autoplay muted loop playsinline>
+
+    <video autoplay muted loop playsinline poster="hero-fallback.jpg" id="hero-video">
       <source src="Hero-WorldPage.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
+
     <div class="hero-content">
       <h1>Altara 2402 — Planet Terra Nova</h1>
       <p>Planet Terra Nova mirrors Earth in scale and complexity but has its own geography, regions, and corporate infrastructures. Each continent is a learning module, combining 3D visualization with Informatics concepts.</p>
     </div>
   </section>
 
-  <!-- Main Content -->
-  <main>
-    <h2>Continents & Learning Modules</h2>
+  <!-- World Overview Section -->
+  <section class="world-overview">
+    <h2>🌍 World Overview</h2>
+    <p>Each continent of Altara serves as a visual environment and interactive learning module, giving users hands-on experience with Informatics principles through immersive storytelling.</p>
+
     <table>
       <thead>
         <tr>
@@ -183,46 +181,19 @@
         </tr>
       </tbody>
     </table>
+  </section>
 
-    <p>Key idea: Each continent is both a visual environment and an interactive learning module, giving users hands-on experience with Informatics principles through immersive storytelling.</p>
-  </main>
-
-  <!-- particles.js library -->
+  <!-- Particles.js Script -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-
   <script>
     particlesJS("particles-js", {
-      "particles": {
-        "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
-        "color": { "value": "#06b6d4" },
-        "shape": { "type": "circle" },
-        "opacity": { "value": 0.5 },
-        "size": { "value": 2 },
-        "line_linked": {
-          "enable": true,
-          "distance": 120,
-          "color": "#06b6d4",
-          "opacity": 0.3,
-          "width": 1
-        },
-        "move": {
-          "enable": true,
-          "speed": 1.5,
-          "direction": "none",
-          "random": true,
-          "straight": false,
-          "out_mode": "out"
-        }
-      },
-      "interactivity": {
-        "detect_on": "canvas",
-        "events": {
-          "onhover": { "enable": true, "mode": "grab" },
-          "onclick": { "enable": false }
-        },
-        "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 0.4 } } }
-      },
-      "retina_detect": true
+      particles: {
+        number: { value: 50 },
+        size: { value: 3 },
+        move: { speed: 1 },
+        color: { value: "#4fc3f7" },
+        line_linked: { enable: true, distance: 150, color: "#4fc3f7", opacity: 0.3, width: 1 }
+      }
     });
   </script>
 
