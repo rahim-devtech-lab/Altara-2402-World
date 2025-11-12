@@ -1,0 +1,6 @@
+https://handbrake.fr/
+HandBrake is a open-source tool, built by volunteers, for converting video from nearly any format to a selection of modern, widely supported codecs.
+Reasons you’ll love HandBrake:
+  Convert video from nearly any format
+  Free and Open Source
+  Multi-Platform (Windows, Mac and Linux)
