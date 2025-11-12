@@ -5,51 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Altara 2402 — Planet Terra Nova</title>
   <style>
+    :root {
+      --bg: #0f1724;
+      --card: #101b2d;
+      --accent: #00bfff;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: "Poppins", sans-serif;
     }
 
     body {
-      background: #0b0f17;
-      color: #fff;
+      background: var(--bg);
+      color: var(--text);
       overflow-x: hidden;
-    }
-
-    /* Navigation */
-    nav {
-      position: fixed;
-      top: 20px;
-      right: 30px;
-      z-index: 10;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #fff;
-      background: rgba(79, 195, 247, 0.15);
-      border: 1px solid rgba(79, 195, 247, 0.4);
-      padding: 10px 20px;
-      border-radius: 8px;
-      font-weight: 600;
-      transition: 0.3s ease;
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-    }
-
-    nav a:hover {
-      background: rgba(79, 195, 247, 0.3);
-      border-color: #4fc3f7;
-      transform: scale(1.05);
     }
 
     /* Hero Section */
     .hero {
       position: relative;
       width: 100%;
-      height: 100vh;
+      height: 90vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -59,13 +40,13 @@
 
     .hero video {
       position: absolute;
-      top: 0;
-      left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
+      top: 0;
+      left: 0;
       z-index: 1;
-      background: #000;
+      filter: brightness(0.45);
     }
 
     #particles-js {
@@ -78,156 +59,274 @@
     .hero-content {
       position: relative;
       z-index: 3;
-      max-width: 900px;
-      padding: 20px;
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      background: rgba(0, 0, 0, 0.45);
-      border-radius: 12px;
+      max-width: 800px;
+      padding: 2rem;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      background: rgba(15, 23, 36, 0.5);
+      border-radius: 1rem;
     }
 
     .hero-content h1 {
-      font-size: 2.5em;
+      font-size: 2.8rem;
       margin-bottom: 1rem;
-      color: #4fc3f7;
+      color: var(--accent);
     }
 
     .hero-content p {
-      font-size: 1.1em;
-      color: #dcdcdc;
-      line-height: 1.5;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: var(--text);
     }
 
-    /* World Overview Section */
-    section.world-overview {
-      padding: 60px 20px;
-      background: #0f1724;
+    /* Section Styling */
+    section {
+      padding: 3rem 1rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
       text-align: center;
-    }
-
-    section.world-overview h2 {
-      font-size: 2em;
-      margin-bottom: 20px;
-      color: #4fc3f7;
-    }
-
-    section.world-overview p {
-      font-size: 1.1em;
-      max-width: 800px;
-      margin: 0 auto 40px auto;
-      color: #dcdcdc;
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
     }
 
     table {
-      width: 90%;
-      margin: 0 auto;
+      width: 100%;
       border-collapse: collapse;
-      color: #fff;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 12px;
+      background: var(--card);
+      border-radius: 10px;
       overflow: hidden;
+      margin-bottom: 2rem;
     }
 
     th, td {
-      padding: 15px;
+      padding: 1rem;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: left;
     }
 
     th {
-      background: rgba(255, 255, 255, 0.1);
-      color: #4fc3f7;
+      color: var(--accent);
     }
 
-    tr:last-child td {
-      border-bottom: none;
+    tr:hover {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .emoji {
+      font-size: 1.3rem;
+      margin-right: 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--muted);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
   </style>
 </head>
 
 <body>
-
-  <!-- Navigation -->
-  <nav>
-    <a href="index.html">🏠 Back to Home</a>
-  </nav>
-
   <!-- Hero Section -->
   <section class="hero">
     <div id="particles-js"></div>
-
-    <video autoplay muted loop playsinline poster="hero-fallback.png" id="hero-video">
+    <video autoplay muted loop playsinline>
       <source src="Hero-WorldPage.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
-
     <div class="hero-content">
-      <h1>Altara 2402 </h1>
-      <p>The Planet Altara mirrors Earth in scale and complexity but has its own geography, regions, and corporate infrastructures. Each continent is a learning module, combining 3D visualization with Informatics concepts.</p>
+      <h1>Altara 2402 — Planet Terra Nova</h1>
+      <p>
+        Planet Terra Nova mirrors Earth in scale and complexity but has its own geography, regions, and corporate infrastructures. 
+        Each continent is a learning module, combining 3D visualization with Informatics concepts.
+      </p>
     </div>
   </section>
 
-  <!-- World Overview Section -->
-  <section class="world-overview">
+  <!-- World Overview -->
+  <section>
     <h2>🌍 World Overview</h2>
-    <p>Each continent of Altara serves as a visual environment and interactive learning module, giving users hands-on experience with Informatics principles through immersive storytelling.</p>
-
     <table>
-      <thead>
-        <tr>
-          <th>Continent</th>
-          <th>Sector Focus</th>
-          <th>Learning Theme</th>
-          <th>Example Scene</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Atheris</td>
-          <td>Mining (rare minerals, energy crystals)</td>
-          <td>Database Management – storing, tracking, analyzing mining data</td>
-          <td>3D mine tunnels with live dashboards showing extraction, inventory, and analytics</td>
-        </tr>
-        <tr>
-          <td>Veridia</td>
-          <td>Agriculture & AI irrigation</td>
-          <td>Information Systems Design – smart farming & IoT sensors</td>
-          <td>Smart farm with drones and sensors displaying soil health, water usage, and crop growth</td>
-        </tr>
-        <tr>
-          <td>Kryon</td>
-          <td>Logistics & transport</td>
-          <td>ERP & Systems Integration – connecting supply chains</td>
-          <td>3D logistics hub with real-time cargo tracking, route optimization dashboards</td>
-        </tr>
-        <tr>
-          <td>Solara</td>
-          <td>R&D and robotics</td>
-          <td>Human-Computer Interaction – AR/VR interfaces</td>
-          <td>Research campus with holographic UIs, robot prototypes, and AR simulations</td>
-        </tr>
-        <tr>
-          <td>Nuvantis</td>
-          <td>HQ City</td>
-          <td>Information Security & Ethics – cybersecurity, access control</td>
-          <td>WolfTech HQ data vault, firewalls, encryption key puzzles, and secure server rooms</td>
-        </tr>
-      </tbody>
+      <tr>
+        <th>Continent</th>
+        <th>Sector Focus</th>
+        <th>Learning Theme</th>
+        <th>Example Scene</th>
+      </tr>
+      <tr>
+        <td>Atheris</td>
+        <td>Mining (rare minerals, energy crystals)</td>
+        <td>Database Management – storing, tracking, analyzing mining data</td>
+        <td>3D mine tunnels with live dashboards showing extraction and analytics</td>
+      </tr>
+      <tr>
+        <td>Veridia</td>
+        <td>Agriculture & AI irrigation</td>
+        <td>Information Systems Design – smart farming & IoT sensors</td>
+        <td>Smart farms with drones and real-time soil data visualization</td>
+      </tr>
+      <tr>
+        <td>Kryon</td>
+        <td>Logistics & transport</td>
+        <td>ERP & Systems Integration – connecting supply chains</td>
+        <td>3D logistics hubs with cargo tracking dashboards</td>
+      </tr>
+      <tr>
+        <td>Solara</td>
+        <td>R&D and robotics</td>
+        <td>Human-Computer Interaction – AR/VR interfaces</td>
+        <td>Research campus with holographic UIs and robot labs</td>
+      </tr>
+      <tr>
+        <td>Nuvantis</td>
+        <td>HQ City</td>
+        <td>Information Security & Ethics – cybersecurity, access control</td>
+        <td>Data vaults, encryption puzzles, secure networks</td>
+      </tr>
     </table>
   </section>
 
-  <!-- Particles.js Script -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <!-- Core Systems -->
+  <section>
+    <h2>⚙️ Core Systems / Modules to Include</h2>
+    <table>
+      <tr>
+        <th>Icon</th>
+        <th>System / Module</th>
+        <th>Informatics Link</th>
+        <th>Example Activity</th>
+      </tr>
+      <tr>
+        <td>🏭</td>
+        <td>Wolf ERP Nexus</td>
+        <td>Enterprise Resource Planning</td>
+        <td>Build a mock ERP dashboard for operations</td>
+      </tr>
+      <tr>
+        <td>🧱</td>
+        <td>DataMine OS</td>
+        <td>Database Systems</td>
+        <td>Visualize mining data tables and relationships</td>
+      </tr>
+      <tr>
+        <td>🌾</td>
+        <td>AgriSync AI</td>
+        <td>Decision Support Systems</td>
+        <td>Analyze farming data to predict yields</td>
+      </tr>
+      <tr>
+        <td>🖥️</td>
+        <td>HoloDesk</td>
+        <td>HCI / Interface Design</td>
+        <td>Create holographic-style UI for data analysis</td>
+      </tr>
+      <tr>
+        <td>🔐</td>
+        <td>SecureNet</td>
+        <td>Information Security</td>
+        <td>Test firewalls, encryption keys, and data access logic</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- Informatics Module Links -->
+  <section>
+    <h2>💡 How This Links to Your BSc Informatics Modules</h2>
+    <table>
+      <tr>
+        <th>Module Code</th>
+        <th>Informatics Topic</th>
+        <th>Altara System Connection</th>
+      </tr>
+      <tr><td>INF3703</td><td>Database Design & Implementation</td><td>DataMine OS</td></tr>
+      <tr><td>INF3705</td><td>Systems Analysis & Design</td><td>Wolf ERP Nexus</td></tr>
+      <tr><td>INF3720</td><td>Human-Computer Interaction II</td><td>HoloDesk</td></tr>
+      <tr><td>INF3707</td><td>Information Security</td><td>SecureNet</td></tr>
+      <tr><td>INF3701</td><td>Decision Support Systems</td><td>AgriSync AI</td></tr>
+    </table>
+  </section>
+
+  <!-- Organisations Section -->
+  <section>
+    <h2>🌐 Organisations Across Sectors</h2>
+    <table>
+      <tr>
+        <th>Continent</th>
+        <th>Sector Focus</th>
+        <th>Global</th>
+        <th>Continental</th>
+        <th>Country (SA)</th>
+        <th>Regional</th>
+        <th>City Level</th>
+      </tr>
+      <tr>
+        <td>Atheris</td>
+        <td>Mining</td>
+        <td>Rio Tinto</td>
+        <td>African Rainbow Minerals</td>
+        <td>Anglo American SA</td>
+        <td>KZN Mining Consortium</td>
+        <td>Durban Mineral Tech</td>
+      </tr>
+      <tr>
+        <td>Veridia</td>
+        <td>Agriculture & AI</td>
+        <td>John Deere</td>
+        <td>AfriAgriTech</td>
+        <td>Spar Agro SA</td>
+        <td>AgriHub Midlands</td>
+        <td>Pietermaritzburg Smart Farm</td>
+      </tr>
+      <tr>
+        <td>Kryon</td>
+        <td>Logistics</td>
+        <td>DHL Global</td>
+        <td>Imperial Logistics Africa</td>
+        <td>Transnet SA</td>
+        <td>KZN Freight Network</td>
+        <td>Durban Port SmartOps</td>
+      </tr>
+      <tr>
+        <td>Solara</td>
+        <td>R&D & Robotics</td>
+        <td>Boston Dynamics</td>
+        <td>CSIR Africa Labs</td>
+        <td>University of Pretoria TechLab</td>
+        <td>DUT Robotics Hub</td>
+        <td>Durban AI Research Centre</td>
+      </tr>
+      <tr>
+        <td>Nuvantis</td>
+        <td>Information Security</td>
+        <td>IBM Security</td>
+        <td>Liquid Intelligent Tech</td>
+        <td>WolfTech SA</td>
+        <td>Nuvantis Data Network</td>
+        <td>Durban SecureCity Node</td>
+      </tr>
+    </table>
+  </section>
+
+  <footer>
+    © 2402 Altara World — Developed by Rahim DevTech Lab
+  </footer>
+
+  <!-- Particle.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
   <script>
     particlesJS("particles-js", {
-      particles: {
-        number: { value: 50 },
-        size: { value: 3 },
-        move: { speed: 1 },
-        color: { value: "#4fc3f7" },
-        line_linked: { enable: true, distance: 150, color: "#4fc3f7", opacity: 0.3, width: 1 }
+      "particles": {
+        "number": {"value": 60},
+        "size": {"value": 3},
+        "move": {"speed": 1},
+        "line_linked": {"enable": true, "distance": 150, "color": "#00bfff"},
+        "color": {"value": "#00bfff"}
       }
     });
   </script>
-
 </body>
 </html>
