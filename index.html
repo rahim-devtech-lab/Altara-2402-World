@@ -9,9 +9,8 @@
     body, html {
       height: 100%;
       font-family: 'Poppins', sans-serif;
-      overflow: hidden;
       color: white;
-      background-color: #000;
+      scroll-behavior: smooth;
     }
 
     /* Hero Section */
@@ -24,6 +23,9 @@
       align-items: center;
       text-align: center;
       overflow: hidden;
+
+      /* Fallback background */
+      background: url('hero-fallback.jpg') center center / cover no-repeat;
     }
 
     .hero video {
@@ -45,8 +47,8 @@
       border-radius: 12px;
 
       /* Backdrop blur effect */
-      backdrop-filter: blur(4px);          /* Standard */
-      -webkit-backdrop-filter: blur(4px);  /* Safari support */
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px); /* Safari */
     }
 
     .hero h1 {
@@ -99,11 +101,11 @@
 
     /* Responsive adjustments */
     @media (max-width: 768px) {
-      .hero-overlay h1 {
+      .hero h1 {
         font-size: 2.5rem;
       }
 
-      .hero-overlay p {
+      .hero p {
         font-size: 1rem;
       }
 
@@ -117,11 +119,13 @@
 <body>
   <!-- 🌌 Hero Video Section -->
   <section class="hero">
-    <video autoplay muted loop playsinline poster="hero-fallback.png">
+    <!-- Video: autoplay, muted, loop for most browsers -->
+    <video autoplay muted loop playsinline>
       <source src="intro-altara.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
 
+    <!-- Hero Content -->
     <div class="hero-content">
       <h1>Altara 2402</h1>
       <p>Explore the AI-driven world built by WolfTech Inc — where Informatics shapes the future of planetary intelligence.</p>
