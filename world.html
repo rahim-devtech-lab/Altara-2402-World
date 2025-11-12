@@ -1,17 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Altara 2402 World Map | WolfTech</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Altara 2402 World Map | WolfTech Simulation</title>
   <style>
-    body { font-family: 'Poppins', sans-serif; background-color: #0f1724; color: #fff; text-align: center; padding: 50px; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html {
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      scroll-behavior: smooth;
+      background-color: #0f1724;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 60vh;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+      background: url('hero-world-fallback.jpg') center center / cover no-repeat;
+    }
+
+    /* Particle animation container */
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .hero video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      filter: brightness(0.6);
+    }
+
+    .hero-content {
+      z-index: 2;
+      padding: 20px 30px;
+      max-width: 900px;
+      background: rgba(0,0,0,0.4);
+      border-radius: 12px;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+
+    .hero-content h1 {
+      font-size: 2.8rem;
+      color: #a6e1ff;
+      margin-bottom: 15px;
+    }
+
+    .hero-content p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #c0c0c0;
+    }
+
+    /* Main Content */
+    main {
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    main h2 {
+      color: #06b6d4;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+    }
+
+    table, th, td {
+      border: 1px solid #06b6d4;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #0b1220;
+      color: #00b4ff;
+    }
+
+    td {
+      color: #c0c0c0;
+    }
+
+    /* Responsive */
+    @media(max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+      .hero-content p {
+        font-size: 1rem;
+      }
+      table, th, td {
+        font-size: 0.9rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <h1>Altara 2402 World Map</h1>
-  <p>This is the placeholder for your 3D educational world map.</p>
-  <p>Coming soon: Interactive 3D map of WolfTech operations!</p>
-  <a href="index.html" style="color:#06b6d4; text-decoration:underline;">Back to Home</a>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div id="particles-js"></div>
+    <video autoplay muted loop playsinline>
+      <source src="intro-world.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-content">
+      <h1>Altara 2402 — Planet Terra Nova</h1>
+      <p>Planet Terra Nova mirrors Earth in scale and complexity but has its own geography, regions, and corporate infrastructures. Each continent is a learning module, combining 3D visualization with Informatics concepts.</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main>
+    <h2>Continents & Learning Modules</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Continent</th>
+          <th>Sector Focus</th>
+          <th>Learning Theme</th>
+          <th>Example Scene</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Atheris</td>
+          <td>Mining (rare minerals, energy crystals)</td>
+          <td>Database Management – storing, tracking, analyzing mining data</td>
+          <td>3D mine tunnels with live dashboards showing extraction, inventory, and analytics</td>
+        </tr>
+        <tr>
+          <td>Veridia</td>
+          <td>Agriculture & AI irrigation</td>
+          <td>Information Systems Design – smart farming & IoT sensors</td>
+          <td>Smart farm with drones and sensors displaying soil health, water usage, and crop growth</td>
+        </tr>
+        <tr>
+          <td>Kryon</td>
+          <td>Logistics & transport</td>
+          <td>ERP & Systems Integration – connecting supply chains</td>
+          <td>3D logistics hub with real-time cargo tracking, route optimization dashboards</td>
+        </tr>
+        <tr>
+          <td>Solara</td>
+          <td>R&D and robotics</td>
+          <td>Human-Computer Interaction – AR/VR interfaces</td>
+          <td>Research campus with holographic UIs, robot prototypes, and AR simulations</td>
+        </tr>
+        <tr>
+          <td>Nuvantis</td>
+          <td>HQ City</td>
+          <td>Information Security & Ethics – cybersecurity, access control</td>
+          <td>WolfTech HQ data vault, firewalls, encryption key puzzles, and secure server rooms</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Key idea: Each continent is both a visual environment and an interactive learning module, giving users hands-on experience with Informatics principles through immersive storytelling.</p>
+  </main>
+
+  <!-- particles.js library -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#06b6d4" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5 },
+        "size": { "value": 2 },
+        "line_linked": {
+          "enable": true,
+          "distance": 120,
+          "color": "#06b6d4",
+          "opacity": 0.3,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 1.5,
+          "direction": "none",
+          "random": true,
+          "straight": false,
+          "out_mode": "out"
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": { "enable": true, "mode": "grab" },
+          "onclick": { "enable": false }
+        },
+        "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 0.4 } } }
+      },
+      "retina_detect": true
+    });
+  </script>
+
 </body>
 </html>
