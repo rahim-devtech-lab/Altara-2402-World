@@ -156,21 +156,23 @@
 <body>
   <a href="index.html" class="back-home">← Back to Home</a>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div id="particles-js"></div>
-    <video autoplay muted loop playsinline>
-      <source src="Hero-WorldPage.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <div class="hero-content">
-      <h1>Altara 2402 — Planet Terra Nova</h1>
-      <p>
-        Planet Terra Nova mirrors Earth in scale and complexity but has its own geography, regions, and corporate infrastructures. 
-        Each continent is a learning module, combining 3D visualization with Informatics concepts.
-      </p>
-    </div>
-  </section>
+<!-- Hero Section -->
+<section class="hero" style="position: relative; height: 100vh; overflow: hidden; display: flex; align-items: center; justify-content: center; text-align: center; color: white;">
+  <video autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2;">
+    <source src="Hero-WorldPage.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.45); z-index: -1;"></div>
+
+  <div class="hero-content" style="max-width: 900px; padding: 0 20px;">
+    <h1 style="font-size: 3rem; margin-bottom: 1rem;">Altara 2402 — Planet Terra Nova</h1>
+    <p style="font-size: 1.3rem; line-height: 1.6;">
+      Planet Terra Nova mirrors Earth in scale and complexity but has its own geography, regions, and corporate infrastructures.
+      Each continent is a learning module, combining 3D visualization with Informatics concepts.
+    </p>
+  </div>
+</section>
+
 
   <!-- World Overview -->
   <section>
