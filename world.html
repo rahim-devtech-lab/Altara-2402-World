@@ -26,6 +26,29 @@
       overflow-x: hidden;
     }
 
+    /* Back to Home Button */
+    .back-home {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: rgba(0, 191, 255, 0.2);
+      border: 1px solid var(--accent);
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      transition: all 0.3s ease;
+      z-index: 100;
+    }
+
+    .back-home:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
     /* Hero Section */
     .hero {
       position: relative;
@@ -131,6 +154,8 @@
 </head>
 
 <body>
+  <a href="index.html" class="back-home">← Back to Home</a>
+
   <!-- Hero Section -->
   <section class="hero">
     <div id="particles-js"></div>
